@@ -1,0 +1,33 @@
+/* 色指定は16進数6桁カラーコードで指定する。透明度は16進数8桁カラーコードで付加指定する。*/
+body{
+    background-color: #c5feff;
+}
+
+.header-navi ul{
+    list-style-type: none;
+    /* ulが元々持っている余白をリセット */
+    margin: 0;
+    padding: 0;
+
+    /* Flexboxを有効化 */
+    display: flex;
+
+    justify-content: space-around; 
+    background-color: #adadad;
+}
+
+.header-navi a {
+    color: #ffffff; 
+    /* テキストの下線を消す */
+    text-decoration: none; 
+    /* クリックできる範囲を「箱」に広げる */
+    display: block; 
+    /* 箱の内側に余白を作る */
+    padding: 10px 10px; 
+}
+
+/* マウスが乗った時（ホバー）のスタイル */
+.header-navi a:hover {
+    /* 背景色を少し明るい灰色に */
+    background-color: #7a7a7ad0; 
+}
