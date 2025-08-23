@@ -8,24 +8,103 @@
     <!-- SEO対策のためのキーワード。最近は参照されないらしい -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- スマホやタブレットでサイトを適切に表示させる -->
-    <title>青井くま公式サイトTOP【RoBea Official】</title>
+    <title>HOME ❘ 青井くま公式サイト【RoBea Official】</title>
     <link rel="stylesheet" href="style.css">
     <!-- CSSファイルの指定 -->
 </head>
+
+<!-- class名の命名規則はケバブケース(ハイフンでつなげる)にする。 -->
 <body>
-    <!-- class名の命名規則はケバブケース(ハイフンでつなげる)にする。 -->
     <header>
-        <h1>青井くま公式サイト【RoBea】</h1>
-        <nav class="header-navi">
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">紹介(Profile)</a></li>
-                <li><a href="#">お知らせ(NEWS)</a></li>
-                <li><a href="#">コンテンツ(contents)</a></li>
-                <li><a href="#">お問い合わせ(contact)</a></li>
-            </ul>
-        </nav>
+        <div class="header-inner">
+            <h1>青井くま公式サイト【RoBea】</h1>
+            <nav class="header-navi">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="profile.html">紹介(Profile)</a></li>
+                    <li><a href="news.html">お知らせ(NEWS)</a></li>
+                    <li><a href="contents.html">コンテンツ(contents)</a></li>
+                    <li><a href="#">お問い合わせ(contact)</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://x.com/RoBEA_GFcreator" target="_blank"><img src="img/x.icon.png"></a>
+            <a href="https://www.youtube.com/@RoBea-gf-V-c" target="_blank"><img src="img/youtube.icon.png"></a>
+        </div>
     </header>
+
+    <!-- ↓まだ使わない。動画の更新一覧について↓ -->
+    <div class="video-gallery"> <!-- video-galleryのclass名で更新動画の一覧の外箱を作る -->
+        <h2>最近の更新動画</h2>
+
+        <!-- 下のvideo-gallery-contentsのclass名で動画の並び方などを作る -->
+        <div class="video-gallery-contents">
+            <!-- special-videoの修飾子classが付いている場合だけ、お知らせページを作るように区別する。 -->
+            <div class="video-card special-video"> <a href="[YouTubeのURL]" target="_blank">
+                <img src="img/channel_profile.jpg" alt="新曲MVのサムネイル">
+                </a>
+                <p class="details-link">
+                <a href="[お知らせページのURL]">新曲「」を公開しました！</a>
+                </p>
+            </div>
+
+            <div class="video-card"> <a href="[YouTubeのURL]" target="_blank">
+                <img src="img/kedo_thumbnail.png" alt="ゲーム実況のサムネイル">
+                </a>
+                <p class="details-link">
+                <a href="[お知らせページのURL]">いつもの動画</a>
+                </p>
+            </div>
+        
+            <div class="video-card"> <a href="[YouTubeのURL]" target="_blank">
+                <img src="img/kedo_thumbnail.png" alt="ゲーム実況のサムネイル">
+                </a>
+                <p class="details-link">
+                <a href="[お知らせページのURL]">いつもの動画</a>
+                </p>
+            </div>
+
+            <div class="video-card special-video"> <a href="[YouTubeのURL]" target="_blank">
+                <img src="img/channel_profile.jpg" alt="新曲MVのサムネイル">
+                </a>
+                <p class="details-link">
+                <a href="[お知らせページのURL]">「」を紹介させていただきました！</a>
+                </p>
+            </div>
+
+            <div class="video-card special-video"> <a href="[YouTubeのURL]" target="_blank">
+                <img src="img/channel_profile.jpg" alt="新曲MVのサムネイル">
+                </a>
+                <p class="details-link">
+                <a href="[お知らせページのURL]">「」を紹介させていただきました！</a>
+                </p>
+            </div>
+
+            <div class="video-card special-video" id="video-card-other">
+                <p class="details-link">他の動画は<a href="https://www.youtube.com/@RoBea-gf-V-c" target="_blank">こちら</a></p>
+            </div>
+
+        </div>
+    </div>
+        <!-- ↑まだ使わない。動画の更新一覧について↑ -->
+    
+    <main>
+        <h2>はじめまして!<br>
+            RoBeaこと【青井 くま】です!</h2>
+        <p class="contents-url">
+            このサイトは、青井くまの活動拠点です。<br>
+            日々の活動についてのお知らせはもちろん、私が創作した物語や音楽についての紹介もあります！<br>
+            そして、私が提唱する「人類総中二病説」についての説明も<a href="profile.html">紹介(Profile)</a>ページに載せています。<br>
+            つまり、私の頭の中にある面白いこと、紹介したいものを全部このサイトに詰め込んでいます！
+        </p>
+        <p>ぜひ、楽しんでいってください！</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RoBea Official</p>    
+    </footer>
 
 </body>
 </html>
