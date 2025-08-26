@@ -1,0 +1,28 @@
+// このファイルはCSSのインポートについての記述と、CSSの記述ルールをコメントアウトにて記載する。
+// 色指定は16進数6桁カラーコードで指定する。透明度は16進数8桁カラーコードで付加指定する。
+// 背景色や文字色、幅や大きさの指定、テキスト状態や枠の指定、並び方の指定の順番に記述する。
+// 習ったばかりのおまじない系はどういう効果なのか、コメントを残しておく（なるべく自力で調べて、細かい理解をAIに聞く！）
+// 各ファイルを集約するための窓口的ファイル。
+// PCベースの記述のため、tabletとmobileを一番下にしておいて、スマホ、タブレット、パソコンのレスポンシブ対応とする。
+
+// 共通タグの実装
+@use 'styles/common';
+@use 'styles/header';
+@use 'styles/footer';
+// ページごとの実装
+@use 'styles/index';
+@use 'styles/profile';
+@use 'styles/news';
+@use 'styles/contents';
+@use 'styles/contact';
+/* 以下はスマホ用とタブレット用の実装 */
+@use 'styles/tablet';
+@use 'styles/mobile';
+
+@media (max-width: 768px) {
+  @include tablet.tablet-styles;
+}
+
+@media (max-width: 480px) {
+  @include mobile.mobile-styles;
+}

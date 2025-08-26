@@ -1,0 +1,72 @@
+/* 以下にはヘッダーについての記述をする。 */
+@use 'common';
+
+header {
+    color: #ebebeb;
+    background-color: #4682a5;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-family: common.$font-accent;
+    position: relative;
+}
+
+.header__social-icons {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: flex;
+    flex-direction: column;
+
+    img {
+        width: auto;
+        max-height: 45px;
+        display: block;
+    }
+
+    a {
+        margin: 3px auto;
+    }
+}
+
+.header--inner h1 {
+    padding-right: 55px;
+}
+
+.header__navi {
+    ul {
+        background-color: #adadad;
+        margin: 0;
+        padding: 2px 2px;
+        list-style-type: none;
+
+        display: flex;
+        justify-content: space-around;
+
+        // 横方向にはみ出した(overflow)場合に、自動(auto)でスクロールバーを出す
+        overflow-x: auto;
+        // Flexアイテムの折り返し(wrap)を禁止(nowrap)して、強制的に一行に収める
+        white-space: nowrap;
+    }
+
+    a {
+        color: #ffffff;
+        text-decoration: none;
+        // テキストの下線を消す
+        border: 2px solid #f1f1f1;
+        border-radius: 5px;
+        display: block;
+        margin: 1px 2px;
+        padding: 5px 5px;
+        // パンやズームを許可するか
+        touch-action: manipulation;
+
+        &:hover,
+        &:active {
+            // マウスが乗った時（ホバー）とクリックするとき（アクション）のスタイル。スマホとPC両方のクリックの見た目を整えるならこれ。
+            background-color: #7a7a7ad0;
+        }
+    }
+}
+
+/* ここまでヘッダーについての記述 */

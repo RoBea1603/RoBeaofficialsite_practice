@@ -1,0 +1,76 @@
+/* 以下にはトップページについての記述をする。 */
+@use 'common';
+
+// ↓トップページの動画の更新関係について
+.gallery__top--recent-video {
+    margin: 20px 5px;
+    padding: 0 2px;
+    border: 2px solid #222222;
+
+    h2 {
+        font-family: common.$font-accent;
+        font-size: 35px;
+        font-weight: bold;
+    }
+}
+
+.gallery__top--contents {
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    // ↓子要素の折り返しについて、親要素の大きさをこえたら、勝手に改行する
+    flex-wrap: wrap;
+}
+
+.card__top--video {
+    background-color: #ffffff;
+    padding: 5px;
+    margin: 2px;
+    border: 1px solid #bababa;
+    border-radius: 6px;
+    flex: 1 1 150px;
+
+    img {
+        width: 100%;
+        min-width: 85px;
+        height: auto;
+    }
+
+}
+
+#card__top--other {
+    background-color: #ffffff00;
+    font-size: 20px;
+    border: none;
+    display: flex;
+    align-items: flex-end;
+}
+
+.card__top--video {
+    .link__top--video {
+        // カード内の、お知らせへのリンクラッパーの基本スタイル。普段はこれを非表示にしておく！
+        display: none;
+    }
+}
+
+.card__top--video.video--special {
+    .link__top--video {
+        // 「.card__top--video」classと同時に「video--special」というclassが付いたカードの中の、
+        // 「link__top--video」だけを表示する。特別な時だけ、上書きして表示！
+        display: block;
+
+        a:hover,
+        &:active {
+            background-color: #7a7a7aa1;
+        }
+
+    }
+}
+
+// ↑トップページの動画の更新関係について
+
+.link__top--text a {
+    @include common.common-link-style;
+}
+
+/* ここまでトップページについての記述 */

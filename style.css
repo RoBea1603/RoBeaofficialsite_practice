@@ -1,206 +1,266 @@
-/* 色指定は16進数6桁カラーコードで指定する。透明度は16進数8桁カラーコードで付加指定する。*/
-/* タグ名の指定を上に記述する。その下に、そのタグの中で使われるclass名の記述していく。 */
-/* 背景色や文字色、幅や大きさの指定、テキスト状態や枠の指定、並び方の指定の順番に記述する。ただし、習ったおまじない系は一番上に記述する。 */
-
-
-/* ページ全体の基本の見た目設定 */
-body{
-    background-color: #d0f0f8;
-    margin: 0 0;
+@charset "UTF-8";
+/* 以下には、基本ルールや基本の見た目の記述をする。 */
+@font-face {
+  font-family: "kaiseidecol";
+  src: url(fonts/KaiseiDecol.ttf) format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "kaiseidecol";
+  src: url(fonts/KaiseiDecol.Bold.ttf) format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "MPLUS2";
+  src: url(fonts/MPLUS2.ttf) format("truetype");
+}
+body {
+  background-image: url(img/site.back.png);
+  background-size: 100% auto;
+  margin: 0 0;
+  background-attachment: fixed;
+  font-family: "MPLUS2", sans-serif;
 }
 
-/* ↓headerタグ関係の記述 */
-header{
-    background-color: #cdd2ffb6;
-    background-attachment: fixed;
-    text-align: center;
-    width: 100%;
-    height: auto;
-    position: relative;
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
 }
 
-.social-icons{
-    position: absolute;
-    right: 5px;
-    top: 3px;
-    display: flex;
-    flex-direction: column;
+th,
+td {
+  padding: 10px;
+  border: 1px solid rgba(138, 138, 138, 0.6039215686);
+  text-align: left;
 }
 
-.social-icons img{
-    max-width: 30px;
-    height: auto;
-    display: block;
+th {
+  background-color: #a9f791;
+  font-family: "kaiseidecol", serif;
 }
 
-.social-icons a {
-    margin: 2px auto;
+td {
+  background-color: #d9f8d6;
 }
 
-.header-inner h1{
-    padding-right: 55px;
+/* ここまで統一の見た目についての記述 */
+/* 以下にはヘッダーについての記述をする。 */
+header {
+  color: #ebebeb;
+  background-color: #4682a5;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  font-family: "kaiseidecol", serif;
+  position: relative;
 }
 
-.header-navi ul{
-    background-color: #adadad;
-    margin: 0;
-    padding: 2px 2px;
-    list-style-type: none;
-    
-    display: flex;
-    justify-content: space-around; 
-
-    /* 横方向にはみ出した(overflow)場合に、自動(auto)でスクロールバーを出す */
-    overflow-x: auto; 
-    /* Flexアイテムの折り返し(wrap)を禁止(nowrap)して、強制的に一行に収める */
-    white-space: nowrap;
+.header__social-icons {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.header__social-icons img {
+  width: auto;
+  max-height: 45px;
+  display: block;
+}
+.header__social-icons a {
+  margin: 3px auto;
 }
 
-.header-navi a {
-    color: #ffffff; 
-    text-decoration: none; 
-    /* テキストの下線を消す */
-    border: 2px solid #f1f1f1;
-    border-radius: 5px;
-    display: block; 
-    margin: 1px 2px;
-    padding: 5px 5px; 
-    /* パンやズームを許可するか、 */
-    touch-action: manipulation;
+.header--inner h1 {
+  padding-right: 55px;
 }
 
-/* 画面の幅が基準以下の場合に適用 */
-@media (max-width: 445px) {
-
-    .header-navi a {
-        /* 文字のサイズを少し小さくする */
-        font-size: 14px; 
-        /* 余白も少し詰める */
-        padding: 3px 2px;
-        border: 1px solid #f1f1f1;
-    }
-
+.header__navi ul {
+  background-color: #adadad;
+  margin: 0;
+  padding: 2px 2px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.header__navi a {
+  color: #ffffff;
+  text-decoration: none;
+  border: 2px solid #f1f1f1;
+  border-radius: 5px;
+  display: block;
+  margin: 1px 2px;
+  padding: 5px 5px;
+  touch-action: manipulation;
+}
+.header__navi a:hover, .header__navi a:active {
+  background-color: rgba(122, 122, 122, 0.8156862745);
 }
 
-.header-navi a:hover,
-.header-navi a:active { /* マウスが乗った時（ホバー）とクリックするとき（アクション）のスタイル。
-    スマホとPC両方のクリックの見た目を整えるならこれ。 */
-    background-color: #7a7a7ad0; 
+/* ここまでヘッダーについての記述 */
+/* 以下にはフッターについての記述をする。 */
+footer {
+  background-color: #5c7171;
+  color: #d0f0f8;
+  text-align: center;
+  padding: 5px 0;
 }
 
-
-/* ↓tableタグ関係の記述。*/
-table{
-    /* 枠線を一本線で表示するおまじない */
-    border-collapse: collapse;
-    width: 80%;
-    /* テーブルを中央に配置する */
-    margin: 20px auto;
+/* ここまでフッターについての記述 */
+/* 以下にはトップページについての記述をする。 */
+.gallery__top--recent-video {
+  margin: 20px 5px;
+  padding: 0 2px;
+  border: 2px solid #222222;
+}
+.gallery__top--recent-video h2 {
+  font-family: "kaiseidecol", serif;
+  font-size: 35px;
+  font-weight: bold;
 }
 
-th, td{
-    /* 枠線のスタイルを指定 (1pxの太さ, 実線, グレー) */
-    border: 1px solid #8a8a8a9a;
-    /* セル内の余白 */
-    padding: 10px;
-    /* テキストを左揃えに */
-    text-align: left;
+.gallery__top--contents {
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-th{
-    background-color: #a9f791;
+.card__top--video {
+  background-color: #ffffff;
+  padding: 5px;
+  margin: 2px;
+  border: 1px solid #bababa;
+  border-radius: 6px;
+  flex: 1 1 150px;
+}
+.card__top--video img {
+  width: 100%;
+  min-width: 85px;
+  height: auto;
 }
 
-td{
-    background-color: #d9f8d6;
+#card__top--other {
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 20px;
+  border: none;
+  display: flex;
+  align-items: flex-end;
 }
 
-/* contents-urlクラスについては注意！使いまわしてるから！ */ 
-.contents-url a {
-    background-color: #e4e4e462;
-    color: #2135e9; 
-    touch-action: manipulation;
-}
-
-.contents-url a:hover,
-.contents-url a:active {
-    background-color: #7a7a7aa0;
-}
-
-
-/* ↓トップページの動画の更新一覧について */
-.video-gallery{
-    margin: 20px auto;
-    border: 2px solid #222222;
-}
-
-.video-gallery-contents{
-    margin: 20px auto;
-    display: flex;
-    justify-content: space-around;
-    /* ↓子要素の折り返しについて、親要素の大きさをこえたら、勝手に改行する */
-    flex-wrap: wrap;
-}
-
-.video-card{
-    background-color: #ffffff;
-    padding: 5px;
-    margin: 2px;
-    border: 1px solid #bababa;
-    border-radius: 6px;
-    flex: 1 1 180px;
-}
-
-.video-card img{
-    width: 100%;
-    min-width: 100px;
-    height: auto;
-}
-
-#video-card-other{
-    background-color: #ffffff00;
-    font-size: 20px;
-    border: none;
-    display: flex;
-    align-items: flex-end;
-}
-
-.video-card .details-link {
-    /* カード内の、お知らせへのリンクラッパーの基本スタイル。普段はこれを非表示にしておく！ */
+.card__top--video .link__top--video {
   display: none;
 }
 
-.video-card.special-video .details-link {
-    /* 「video-card」classと同時に「special-video」というclassが付いたカードの中の、
-   「details-link」だけを表示する。特別な時だけ、上書きして表示！ */
-
+.card__top--video.video--special .link__top--video {
   display: block;
 }
-
-.video-card.special-video .details-link a:hover,
-.video-card.special-video .details-link a:active{
-    background-color: #7a7a7aa1; 
+.card__top--video.video--special .link__top--video a:hover, .card__top--video.video--special .link__top--video:active {
+  background-color: rgba(122, 122, 122, 0.631372549);
 }
 
-/* ↑まだ使わない。動画の更新一覧について↑ */
-
-/* ↓お知らせページのメインについての記述 */
-.news-main div{
-    margin: 5px;
-    border: 2px solid #00000070;
+.link__top--text a {
+  background-color: rgba(209, 209, 209, 0.4666666667);
+  color: #1815d6;
+  touch-action: manipulation;
+}
+.link__top--text a:hover, .link__top--text a:active {
+  background-color: #eeeeee;
 }
 
-.news-container div{
-    margin: 10px 5px;
-    border: 2px dotted;
-    border-left: none;
-    border-right: none;
+/* ここまでトップページについての記述 */
+/* 以下には紹介ページについての記述をする。 */
+.table__profile {
+  width: 70%;
+  margin: 40px auto;
+  border-collapse: collapse;
+  border-radius: 15px;
+  background-image: url("img/table.profile.back.jpg");
+  background-size: cover;
+  background-color: #a5a5a5;
+  box-shadow: 15px 15px 10px rgba(122, 122, 122, 0.2352941176);
+  overflow: hidden;
+  /* 最後の行の下線は不要なので消す */
+}
+.table__profile th,
+.table__profile td {
+  background-color: transparent;
+  border: none;
+  vertical-align: middle;
+}
+.table__profile th {
+  padding: 25px 12px;
+  width: 30%;
+  color: #2f4b66;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.table__profile td {
+  color: #e8f2ff;
+  padding: 15px 15px;
+  border-bottom: 1px dashed rgba(232, 242, 255, 0.5882352941);
+}
+.table__profile tr:last-child td {
+  border-bottom: none;
 }
 
-/* ↓footerタグ関係の記述 */
-footer{
-    background-color: #5c7171;
-    color: #d0f0f8;
-    text-align: center;
-    padding: 5px 0;
+.link__profile a {
+  background-color: rgba(209, 209, 209, 0.4666666667);
+  color: #1815d6;
+  touch-action: manipulation;
 }
+.link__profile a:hover, .link__profile a:active {
+  background-color: #eeeeee;
+}
+
+/* ここまで紹介ページについての記述 */
+/* 以下にはお知らせページについての記述をする。 */
+.gallery__news--main {
+  margin: 5px;
+  padding: 0 5px;
+  border: 4px solid rgba(0, 0, 0, 0.4392156863);
+}
+
+.container__news h3 {
+  font-family: "kaiseidecol", serif;
+  font-size: 25px;
+}
+.container__news div {
+  margin: 10px 5px;
+  border-top: 2px dotted;
+  border-bottom: 2px dotted;
+}
+
+.link__news a {
+  background-color: rgba(209, 209, 209, 0.4666666667);
+  color: #1815d6;
+  touch-action: manipulation;
+}
+.link__news a:hover, .link__news a:active {
+  background-color: #eeeeee;
+}
+
+/* ここまでお知らせページについての記述 */
+/* 以下にはコンテンツページについての記述をする。 */
+/* ここまでコンテンツページについての記述 */
+/* 以下には問い合わせページについての記述をする。 */
+/* ここまで問い合わせページについての記述 */
+/* 以下はスマホ用とタブレット用の実装 */
+@media (max-width: 768px) {
+  .header__navi a {
+    font-size: 15px;
+    padding: 4px 3px;
+    border: 2px solid #f1f1f1;
+  }
+}
+@media (max-width: 480px) {
+  .header__navi a {
+    font-size: 14px;
+    padding: 3px 2px;
+    border: 2px solid #f1f1f1;
+  }
+}/*# sourceMappingURL=style.css.map */

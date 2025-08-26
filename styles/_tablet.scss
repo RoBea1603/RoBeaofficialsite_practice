@@ -1,0 +1,11 @@
+// 以下にはスマホ版での見た目で調整したい項目を記述する。
+@mixin tablet-styles {
+
+        .header__navi a {
+                // 文字のサイズを少し小さくする
+                font-size: 15px;
+                // 余白も少し詰める
+                padding: 4px 3px;
+                border: 2px solid #f1f1f1;
+        }
+}

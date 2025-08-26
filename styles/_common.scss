@@ -1,0 +1,71 @@
+/* 以下には、基本ルールや基本の見た目の記述をする。 */
+// 主にbodyタグと統一するテーブルタグ
+//  このファイルには特定のclassやid指定の記述はしない！ mixinで使いまわすスタイルもここで記述する。
+// タグは上の行に、mixinは下の行に溜めていく。共通変数はmixinよりも下に溜めていく。
+
+// フォントの指定
+@font-face {
+    font-family: 'kaiseidecol';
+    src: url(fonts/KaiseiDecol.ttf) format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'kaiseidecol';
+    src: url(fonts/KaiseiDecol.Bold.ttf) format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'MPLUS2';
+    src: url(fonts/MPLUS2.ttf) format('truetype');
+}
+
+$font-accent: 'kaiseidecol', serif; // フォントの変数名を指定。こっちはアクセント
+$font-base: 'MPLUS2', sans-serif; // フォントの変数名を指定。こっちはベース
+
+// サイト全体の指定
+body {
+    background-image: url(img/site.back.png);
+    background-size: 100% auto;
+    margin: 0 0;
+    background-attachment: fixed;
+    font-family: $font-base;
+}
+
+// テーブルの基本設計
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse; // 枠線を一本線で表示するおまじない
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #8a8a8a9a;
+    text-align: left;
+}
+
+th {
+    background-color: #a9f791;
+    font-family: $font-accent;
+}
+
+td {
+    background-color: #d9f8d6;
+}
+
+// インラインのリンクの基本設計
+@mixin common-link-style {
+    background-color: #d1d1d177;
+    color: #1815d6;
+    touch-action: manipulation;
+
+    &:hover,
+    &:active {
+        background-color: #eeeeee;
+    }
+}
+
+/* ここまで統一の見た目についての記述 */

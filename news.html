@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="keywords" content="Vtuber,youtuber,青井,くま,RoBea,公式サイト,のはなる,明日の天気は桜吹雪になるでしょう,人類総中二病">
@@ -9,38 +10,40 @@
 </head>
 
 <body>
-    <!-- class名の命名規則はケバブケース(ハイフンでつなげる)にする。 -->
+    <!-- class名の命名規則はケバブケースとBEMを組み合わせる。 -->
     <header>
-        <div class="header-inner">
+        <div class="header--inner">
             <h1>青井くま公式サイト【RoBea】</h1>
-            <nav class="header-navi">
+            <nav class="header__navi">
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="profile.html">紹介(Profile)</a></li>
                     <li><a href="news.html">お知らせ(NEWS)</a></li>
                     <li><a href="contents.html">コンテンツ(contents)</a></li>
-                    <li><a href="#">お問い合わせ(contact)</a></li>
+                    <li><a href="contact.html">お問い合わせ(contact)</a></li>
                 </ul>
             </nav>
         </div>
 
-        <div class="social-icons">
+        <div class="header__social-icons">
             <a href="https://x.com/RoBEA_GFcreator" target="_blank"><img src="img/x.icon.png"></a>
             <a href="https://www.youtube.com/@RoBea-gf-V-c" target="_blank"><img src="img/youtube.icon.png"></a>
         </div>
     </header>
 
-    <main class="news-main">
+    <main>
         <h2>お知らせページ（NEWS）</h2>
-        <div class="news-container contents-url">
-            <h3>一覧</h3>
-            <div>
-                <h4>新曲「」を公開しました！</h4>
-                <p>2025年8月23日</p>
-                <p>
-                    新曲「」をYoutubeで公開しました ! <br>
-                    ぜひ聴いてみてください ! <br>
-                    動画は<a href="【動画のURL】" target="_blank">こちら</a>
+        <div class="gallery__news--main">
+            <div class="container__news link__news">
+                <h3>一覧</h3>
+
+                <div>
+                    <h4>新曲「」を公開しました！</h4>
+                    <p>2025年8月23日</p>
+                    <p>
+                        新曲「」をYoutubeで公開しました ! <br>
+                        ぜひ聴いてみてください ! <br>
+                        動画は<a href="【動画のURL】" target="_blank">こちら</a>
                     <table>
                         <tr>
                             <th>作詞・作曲</th>
@@ -59,16 +62,16 @@
                             <td>XX様</td>
                         </tr>
                     </table>
-
-                </p>
+                    </p>
+                </div>
             </div>
-
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 RoBea Official</p>    
+        <p>&copy; 2025 RoBea Official</p>
     </footer>
 
 </body>
+
 </html>

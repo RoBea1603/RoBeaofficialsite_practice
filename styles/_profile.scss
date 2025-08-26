@@ -1,0 +1,50 @@
+/* 以下には紹介ページについての記述をする。 */
+@use 'common';
+
+.table__profile {
+    // テーブル全体の設定
+    width: 70%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    border-radius: 15px;
+    background-image: url('img/table.profile.back.jpg');
+    background-size: cover;
+    background-color: #a5a5a5;
+    box-shadow: 15px 15px 10px #7a7a7a3c;
+    overflow: hidden;
+
+    th,
+    td {
+        // 共通スタイルの一部を消しつつ、プロフィール共通スタイルを作る。
+        background-color: transparent;
+        border: none;
+        vertical-align: middle;
+    }
+
+    th {
+        padding: 25px 12px;
+        width: 30%;
+
+        color: #2f4b66;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    td {
+        color: #e8f2ff;
+        padding: 15px 15px;
+        border-bottom: 1px dashed #e8f2ff96;
+    }
+
+    /* 最後の行の下線は不要なので消す */
+    tr:last-child td {
+        border-bottom: none;
+    }
+}
+
+.link__profile a {
+    @include common.common-link-style;
+}
+
+/* ここまで紹介ページについての記述 */
